@@ -27,7 +27,7 @@ import GHC.Num (quotRemInteger)
 import GHC.Types (Int(..))
 
 #if defined(INTEGER_GMP)
-import GHC.Integer.GMP.Internals
+-- import GHC.Integer.GMP.Internals
 #elif defined(INTEGER_SIMPLE)
 import GHC.Integer.Simple.Internals
 #endif
@@ -101,7 +101,7 @@ int = integral
 
 integer :: Integer -> Builder
 #if defined(INTEGER_GMP)
-integer (S# i#) = int (I# i#)
+-- integer (S# i#) = int (I# i#)
 #endif
 integer i
     | i < 0     = minus `mappend` go (-i)
